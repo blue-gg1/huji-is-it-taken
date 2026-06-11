@@ -9,6 +9,6 @@ from settings import TestUrl, BaseApiUrl
 
 for CourseNumber in range(77000, 80000):
     CourseStringNumber = (str(CourseNumber).zfill(5))
-    CheckUrl = (BaseApiUrl+"?year=2026&"+CourseStringNumber)
+    CheckUrl = (BaseApiUrl+"?year=2026&courseId="+CourseStringNumber)
     print(CheckUrl)
     print(requests.get(CheckUrl).content)
