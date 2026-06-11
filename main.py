@@ -7,7 +7,7 @@ from settings import TestUrl, BaseApiUrl
 
 # print(JsonData.text)
 
-for CourseNumber in range(0, 10000):
+for CourseNumber in range(77000, 80000):
     CourseStringNumber = (str(CourseNumber).zfill(5))
     CheckUrl = (BaseApiUrl+"?year=2026&"+CourseStringNumber)
     print(CheckUrl)
