@@ -1,4 +1,5 @@
-BaseUrl = "https://shnaton.huji.ac.il/course/"
+BaseUrl = "https://shnaton.huji.ac.il/api/courses/code/"
+# https://shnaton.huji.ac.il/api/courses/code/00000?year=2026
 
 BaseApiUrl = "https://shnaton.huji.ac.il/api/assignments"
 
