@@ -27,6 +27,7 @@ def LoadCourseNumbers():
             else:
                 print("not empty")
                 print(requests.get(CheckUrl).content)
+                # CourceDict.update({CourseStringNumber, ShnatonJson.content})
         else:
             print("fuck.")
             exit()
