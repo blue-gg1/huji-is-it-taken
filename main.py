@@ -11,15 +11,15 @@ from settings import TestUrl, BaseApiUrl, BaseUrl
 def LoadCourseNumbers():
 
 
-    for CourseNumber in range(77120, 77130):
+    for CourseNumber in range(77125, 77130):
     # for CourseNumber in range(77153, 77200):
         CourseStringNumber = (str(CourseNumber).zfill(5))
-        # CheckUrl = (BaseApiUrl+"?year=2026&courseId="+CourseStringNumber)
         CheckUrl = (BaseUrl+CourseStringNumber+"?year=2026")
+        ShnatonJson = requests.get(CheckUrl)
+
         CourceDict = {"Number":"Json"}
         print(CheckUrl)
-        print(requests.get(CheckUrl).content)
-        if requests.get(CheckUrl).content == "b'[]'":
+        if (ShnatonJson.content == "b'[]'") == True:
             print("empty")
             print(requests.get(CheckUrl).content)
         else:
@@ -32,5 +32,11 @@ def LoadCourseNumbers():
     print(CourceDict)
     return(CourceDict)
 
-test = LoadCourseNumbers()
-print(test)
+# test = LoadCourseNumbers()
+# print(test)
+
+
+TestEmptyJson = requests.get("https://shnaton.huji.ac.il/api/courses/code/77126?year=2026")
+TestFullJson = requests.get("https://shnaton.huji.ac.il/api/courses/code/77129?year=2026")
+print(TestEmptyJson.content)
+print(TestFullJson.content)
