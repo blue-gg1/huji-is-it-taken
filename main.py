@@ -19,12 +19,17 @@ def LoadCourseNumbers():
 
         CourceDict = {"Number":"Json"}
         print(CheckUrl)
-        if (str(ShnatonJson.content) == "b'[]'") == True:
-            print("empty")
-            print(requests.get(CheckUrl).content)
+        
+        if ShnatonJson.status_code == 200:
+            if (str(ShnatonJson.content) == "b'[]'") == True:
+                print("empty")
+                print(requests.get(CheckUrl).content)
+            else:
+                print("not empty")
+                print(requests.get(CheckUrl).content)
         else:
-            print("not empty")
-            print(requests.get(CheckUrl).content)
+            print("fuck.")
+            exit()
 
     
     # CourceDict.update({CourseStringNumber : requests.get(CheckUrl).content})
