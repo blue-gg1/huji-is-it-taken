@@ -19,7 +19,7 @@ def LoadCourseNumbers():
 
         CourceDict = {"Number":"Json"}
         print(CheckUrl)
-        if (ShnatonJson.content == "b'[]'") == True:
+        if (str(ShnatonJson.content) == "b'[]'") == True:
             print("empty")
             print(requests.get(CheckUrl).content)
         else:
@@ -32,13 +32,13 @@ def LoadCourseNumbers():
     print(CourceDict)
     return(CourceDict)
 
-# test = LoadCourseNumbers()
-# print(test)
+test = LoadCourseNumbers()
+print(test)
 
 
-TestEmptyJson = requests.get("https://shnaton.huji.ac.il/api/courses/code/77126?year=2026")
-TestFullJson = requests.get("https://shnaton.huji.ac.il/api/courses/code/77129?year=2026")
+# TestEmptyJson = requests.get("https://shnaton.huji.ac.il/api/courses/code/77126?year=2026")
+# TestFullJson = requests.get("https://shnaton.huji.ac.il/api/courses/code/77129?year=2026")
 
 
-print(str(TestEmptyJson.content) == "b'[]'")
-print(str(TestFullJson.content) == "b'[]'")
+# print(str(TestEmptyJson.content) == "b'[]'")
+# print(str(TestFullJson.content) == "b'[]'")
