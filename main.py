@@ -40,5 +40,5 @@ TestEmptyJson = requests.get("https://shnaton.huji.ac.il/api/courses/code/77126?
 TestFullJson = requests.get("https://shnaton.huji.ac.il/api/courses/code/77129?year=2026")
 
 
-print(TestEmptyJson.content == "b'[]'")
-print(TestFullJson.content == "b'[]'")
+print(str(TestEmptyJson.content) == "b'[]'")
+print(str(TestFullJson.content) == "b'[]'")
